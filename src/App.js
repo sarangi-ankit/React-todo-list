@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import List from "./List"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App=()=>{
+
+    const[list,setList]=useState("")
+    const [item,setItem]=useState([])
+
+
+    const addList=(event)=>{
+
+        setList(event.target.value)
+
+    }
+
+    const addClick=()=>{
+        setItem((allData)=>{
+            return (
+                [...allData,list]
+                
+            )
+        })
+        setList("")
+    }
+    return(
+        <>
+        <div className="container">
+            <div className="sub-container"><br />
+                
+                <h1 className="heading">To-Do-List</h1><br />
+                
+                <input type="text" placeholder="add list" onChange={addList} value={list} />
+                <button onClick={addClick}>+</button>
+
+
+                <ol>
+                    
+                    {item.map((itemval)=>{
+                        return(
+                            <List
+                            key={index} 
+                            id={index}
+                            text={itemval}
+                            onselect={deleteItem}
+                            />
+                        )
+                    })}
+                </ol>
+            </div>
+        </div>
+        
+        </>
+    )
 }
-
-export default App;
+export default App
