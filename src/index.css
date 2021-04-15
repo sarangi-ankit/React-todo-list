@@ -66,6 +66,21 @@ ol li{
   align-items: center;
   color:#8566aa;
   text-transform: capitalize;
+  font-size: 2rem;
+  margin-left: 70px;
 
+}
+.deleteIcon{
+  position:relative;
+  right:160px;
+  top:40px;
+  color: white;
+  background-color: blue;
+  background-position: center;
+  border-radius: 40px;
+}
+.deleteIcon:hover{
+  background-color: red;
+  
 }
 

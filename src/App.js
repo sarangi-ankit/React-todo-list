@@ -35,13 +35,13 @@ const App=()=>{
 
                 <ol>
                     
-                    {item.map((itemval)=>{
+                    {item.map((itemval,index)=>{
                         return(
                             <List
                             key={index} 
-                            id={index}
+                            // id={index}
                             text={itemval}
-                            onselect={deleteItem}
+                            // onselect={deleteItem}
                             />
                         )
                     })}
